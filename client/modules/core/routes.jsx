@@ -2,7 +2,8 @@ import React from 'react';
 import {mount} from 'react-mounter';
 
 import MainLayout from './components/main_layout.jsx';
-import Homepage from './components/homepage.jsx';
+import PublicPage from './components/public_page.jsx';
+import Homepage from './components/home_page.jsx';
 // import Settings from './containers/settings'
 import SettingsUserInfo from './containers/settings_user_info'
 
@@ -10,6 +11,14 @@ import SettingsUserInfo from './containers/settings_user_info'
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
 
+  FlowRouter.route('/', {
+    name: 'public_page',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<PublicPage />)
+      });
+    }
+  });
   FlowRouter.route('/home', {
     name: 'home',
     action() {

@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { setComposerStub } from 'react-komposer';
-import Home from '../home.jsx';
+import Homepage from '../home_page.jsx';
 
-storiesOf('core.Home', module)
+storiesOf('core.Homepage', module)
   .add('default view', () => {
     return (
-      <Home />
+      <Homepage />
     );
   })

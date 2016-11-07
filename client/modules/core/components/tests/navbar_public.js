@@ -1,8 +1,8 @@
 const {describe, it} = global;
 import {expect} from 'chai';
 import {shallow} from 'enzyme';
-import Homepage from '../homepage';
+import NavbarPublic from '../navbar_public';
 
-describe('core.components.homepage', () => {
+describe('core.components.navbar_public', () => {
   it('should do something');
 });

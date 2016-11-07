@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { setComposerStub } from 'react-komposer';
-import Homepage from '../homepage.jsx';
+import PublicPage from '../public_page.jsx';
 
-storiesOf('core.Homepage', module)
+storiesOf('core.PublicPage', module)
   .add('default view', () => {
     return (
-      <Homepage />
+      <PublicPage />
     );
   })
