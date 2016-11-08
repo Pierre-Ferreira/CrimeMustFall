@@ -26,6 +26,7 @@ class SettingsUserInfo extends React.Component {
         <Col xs={12} sm={6} smOffset={3}>
           <Panel>
             <h1>My Info</h1>
+            {/* {this.props.error}?{this.props.error}<div> ALL FIELDS ARE REQUIRED </div>:'' */}
             <form onSubmit={this.saveUserInfo.bind(this)}  >
               <FormGroup>
                 <ControlLabel>Full Names *</ControlLabel>
