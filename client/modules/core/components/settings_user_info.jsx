@@ -11,7 +11,6 @@ class SettingsUserInfo extends React.Component {
     if (e && e.preventDefault)
       e.preventDefault()
     let { fullNameRef, surnameRef } = this.refs
-    // console.log(ReactDOM.findDOMNode(fullNameRef).value, ReactDOM.findDOMNode(surnameRef).value)
     let userInfoObj = {
       fullNameRef: ReactDOM.findDOMNode(fullNameRef).value,
       surnameRef: ReactDOM.findDOMNode(surnameRef).value,

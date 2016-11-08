@@ -5,3 +5,7 @@ import navbarMain from './navbar_main';
 import public_page from './public_page';
 import public_page from './public_page';
 import navbar_public from './navbar_public';
+import main_layout from './main_layout';
+import main_layout from './main_layout';
+import auth_wrapper from './auth_wrapper';
+import main_layout from './main_layout';
