@@ -6,8 +6,8 @@ export default function () {
   Meteor.methods({
     'settings_user_info_save'(_id, userInfoObj) {
 console.log("HI",userInfoObj)
-      check(userInfoObj.fullNameRef, String)
-      check(userInfoObj.surnameRef, String)
+      check(userInfoObj.fullName, String)
+      check(userInfoObj.surname, String)
       Meteor.users.update(_id, {$set: {profile: userInfoObj}})
     }
   });

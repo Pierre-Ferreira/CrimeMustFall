@@ -12,15 +12,15 @@ class SettingsUserInfo extends React.Component {
       e.preventDefault()
     let { fullNameRef, surnameRef } = this.refs
     let userInfoObj = {
-      fullNameRef: ReactDOM.findDOMNode(fullNameRef).value,
-      surnameRef: ReactDOM.findDOMNode(surnameRef).value,
+      fullName: ReactDOM.findDOMNode(fullNameRef).value,
+      surname: ReactDOM.findDOMNode(surnameRef).value,
 
     }
     let {saveUserInfoAction} = this.props
-// console.log(this.props)
     saveUserInfoAction(userInfoObj)
   }
   render() {
+    const {fullName, surname} = this.props.user_profile.profile;
     return (
       <Grid>
         <Col xs={12} sm={6} smOffset={3}>
@@ -28,13 +28,13 @@ class SettingsUserInfo extends React.Component {
             <h1>My Info</h1>
             <form onSubmit={this.saveUserInfo.bind(this)}  >
               <FormGroup>
-                <ControlLabel>Full Names</ControlLabel>
-                <FormControl type="text" ref="fullNameRef" />
+                <ControlLabel>Full Names *</ControlLabel>
+                <FormControl type="text" ref="fullNameRef" defaultValue={fullName}/>
                 <HelpBlock></HelpBlock>
               </FormGroup>
               <FormGroup>
                 <ControlLabel>Surname</ControlLabel>
-                <FormControl type="text" ref="surnameRef" />
+                <FormControl type="text" ref="surnameRef" defaultValue={surname}/>
                 <HelpBlock></HelpBlock>
               </FormGroup>
               <FormGroup>
