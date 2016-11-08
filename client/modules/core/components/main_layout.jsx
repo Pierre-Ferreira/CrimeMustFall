@@ -1,12 +1,15 @@
 import React from 'react';
-import NavbarMain from './navbar_main.jsx'
-const Layout = ({content = () => null }) => (
+import NavBarMain from './navbar_main.jsx'
+import HomePage from './home_page.jsx'
+import AuthWrapper from '../containers/auth_wrapper'
+
+const MainLayout = ({content = () => null}) => (
   <div>
-    <NavbarMain />
-    <div>
-      {content()}
-    </div>
+    <AuthWrapper>
+      <div><NavBarMain /></div>
+      <div>{content()}</div>
+    </AuthWrapper>
   </div>
 );
 
-export default Layout;
+export default MainLayout;
