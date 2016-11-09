@@ -4,11 +4,15 @@ import SettingsUserInfo from '../components/settings_user_info.jsx';
 
 export const composer = ({context, clearErrors}, onData) => {
   const {Meteor, Collections, LocalState} = context();
-  const error = LocalState.get('SAVING_ERROR_INPUT_REQUIRED')
-  const error2 = LocalState.get('SAVING_ERROR')
+  let propsObj = {}
+  propsObj.saveSuccess = LocalState.get('SAVING_SUCCESS_FLAG')
+  propsObj.fullNameError = LocalState.get('SAVING_ERROR_FULLNAME_REQUIRED')
+  propsObj.surnameError = LocalState.get('SAVING_ERROR_SURNAME_REQUIRED')
+  propsObj.schemaError = LocalState.get('SAVING_ERROR')
   if (Meteor.subscribe('user_profile', Meteor.userId()).ready()) {
     let user_profile = Meteor.users.findOne(Meteor.userId())
-    onData(null, {user_profile, error, error2}); // IS THERE A BETTER WAY? IS THIS BEST PRACTICE?
+    propsObj.user_profile = user_profile
+    onData(null, propsObj); // IS THERE A BETTER WAY? IS THIS BEST PRACTICE?
   }
   // clearErrors when unmounting the component.
   return clearErrors
