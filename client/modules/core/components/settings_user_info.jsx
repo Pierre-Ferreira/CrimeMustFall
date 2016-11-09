@@ -20,13 +20,14 @@ class SettingsUserInfo extends React.Component {
     saveUserInfoAction(userInfoObj)
   }
   render() {
-    const {fullName, surname} = this.props.user_profile.profile;
+    const {fullName, surname} = (this.props.user_profile.profile)?this.props.user_profile.profile:'';
     return (
       <Grid>
         <Col xs={12} sm={6} smOffset={3}>
           <Panel>
             <h1>My Info</h1>
-            {/* {this.props.error}?{this.props.error}<div> ALL FIELDS ARE REQUIRED </div>:'' */}
+            {this.props.error}
+            {this.props.error2}
             <form onSubmit={this.saveUserInfo.bind(this)}  >
               <FormGroup>
                 <ControlLabel>Full Names *</ControlLabel>
