@@ -1,9 +1,5 @@
 export default {
     saveUserInfoAction({Meteor, LocalState, FlowRouter}, userInfoObj) {
-      LocalState.set('SAVING_SUCCESS_FLAG', true)
-      LocalState.set('SAVING_ERROR_FULLNAME_REQUIRED', null)
-      LocalState.set('SAVING_ERROR_SURNAME_REQUIRED', null)
-      LocalState.set('SAVING_ERROR', null)
       let errorFlag = false
       if (userInfoObj.fullName==='') {
         errorFlag = true
@@ -28,6 +24,9 @@ export default {
       })
     },
     clearErrors({LocalState}) {
-      return LocalState.set('SAVING_ERROR_INPUT_REQUIRED', null);
+      LocalState.set('SAVING_SUCCESS_FLAG', true)
+      LocalState.set('SAVING_ERROR_FULLNAME_REQUIRED', null)
+      LocalState.set('SAVING_ERROR_SURNAME_REQUIRED', null)
+      LocalState.set('SAVING_ERROR', null)
     }
 }

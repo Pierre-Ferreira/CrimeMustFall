@@ -6,7 +6,7 @@ import PublicPage from './components/public_page.jsx';
 import Homepage from './components/home_page.jsx';
 // import Settings from './containers/settings'
 import SettingsUserInfo from './containers/settings_user_info'
-
+import EmergencyContactsSearch from './containers/emergency_contacts_search.js'
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -32,6 +32,14 @@ export default function (injectDeps, {FlowRouter}) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (<SettingsUserInfo />)
+      });
+    }
+  });
+  FlowRouter.route('/contactssearch', {
+    name: 'contactssearch',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<EmergencyContactsSearch />)
       });
     }
   });

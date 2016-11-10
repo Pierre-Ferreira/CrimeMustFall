@@ -5,8 +5,14 @@ import { Col, Grid, Panel, Button, ControlLabel, HelpBlock, FormGroup, FormContr
 
 
 class SettingsUserInfo extends React.Component {
+
   constructor(props) {
     super(props);
+  }
+  componentWillUnmount() {
+    let {clearErrors} = this.props
+    // Clear up all errors.
+    clearErrors();
   }
   saveUserInfo(e) {
     if (e && e.preventDefault)
@@ -15,9 +21,11 @@ class SettingsUserInfo extends React.Component {
     let userInfoObj = {
       fullName: ReactDOM.findDOMNode(fullNameRef).value,
       surname: ReactDOM.findDOMNode(surnameRef).value,
-
     }
-    let {saveUserInfoAction} = this.props
+    let {saveUserInfoAction, clearErrors} = this.props
+    // Clear up all errors.
+    clearErrors();
+    // Call save action method.
     saveUserInfoAction(userInfoObj)
   }
   render() {
