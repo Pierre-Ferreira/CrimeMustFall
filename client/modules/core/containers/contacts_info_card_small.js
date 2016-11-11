@@ -9,6 +9,7 @@ export const composer = ({context}, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
+  connectContactRequest: actions.contact_connect_request.connectContactRequest,
   context: () => context
 });
 

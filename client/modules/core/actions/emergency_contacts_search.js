@@ -1,6 +1,5 @@
 export default {
   searchEmergencyContacts({Meteor, LocalState, FlowRouter}, searchString) {
-console.log('HEEEHAAA',searchString)
     Meteor.call('search_users_regex', searchString, (err,result) =>{
       if (err) {
         LocalState.set('SEARCH_ERROR',err.message)
