@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
+
+import ContactsInfoCardSmall from '../containers/contacts_info_card_small.js'
+
 import {Form, FormGroup, FormControl, ControlLabel, Col, Button} from 'react-bootstrap'
 
 
@@ -13,7 +16,8 @@ class EmergencyContactsSearch extends React.Component{
     let searchStr = ReactDOM.findDOMNode(contactSearchRef).value
     console.log("SUBMITTING!", searchStr)
     let {searchEmergencyContacts} = this.props
-    searchEmergencyContacts(searchStr)
+    let formattedSearchStr = (searchStr.length > 0 ? searchStr.trim() : ' ')
+    searchEmergencyContacts(formattedSearchStr)
   }
   render() {
     let {searchCursor} = this.props.searchCursor?this.props:[]
@@ -29,9 +33,12 @@ console.log('searchCursor',searchCursor)
             </Col>
           </FormGroup>
         </Form>
-        {searchCursor ? searchCursor.map((user) => (
-          <div key={user._id}>{user._id} {user.profile.fullName} {user.profile.surname}</div>
-        )): ''}
+        <div>
+          {searchCursor ? searchCursor.map((user, index) => (
+            /* <div key={user._id}>{user._id} {user.profile.fullName} {user.profile.surname}</div> */
+            <ContactsInfoCardSmall key={index} contactDetails={user} />
+          )): ''}
+        </div>
       </div>
     )
   }

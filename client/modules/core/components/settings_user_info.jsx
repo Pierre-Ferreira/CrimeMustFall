@@ -17,10 +17,14 @@ class SettingsUserInfo extends React.Component {
   saveUserInfo(e) {
     if (e && e.preventDefault)
       e.preventDefault()
-    let { fullNameRef, surnameRef } = this.refs
+    let { fullNameRef, surnameRef, nicknameRef } = this.refs
+    let fullName = ReactDOM.findDOMNode(fullNameRef).value
+    let surname = ReactDOM.findDOMNode(surnameRef).value
+    let nickname = ReactDOM.findDOMNode(nicknameRef).value
     let userInfoObj = {
-      fullName: ReactDOM.findDOMNode(fullNameRef).value,
-      surname: ReactDOM.findDOMNode(surnameRef).value,
+      fullName,
+      surname,
+      nickname,
     }
     let {saveUserInfoAction, clearErrors} = this.props
     // Clear up all errors.
@@ -52,6 +56,13 @@ class SettingsUserInfo extends React.Component {
                 <FormControl.Feedback />
                 <div style={styles.inputRequiredError}>{this.props.surnameError}</div>
                 <HelpBlock></HelpBlock>
+              </FormGroup>
+              <FormGroup validationState={this.props.nicknameError?"error":"success"}>
+                <ControlLabel>Nickname *</ControlLabel>
+                <FormControl type="text" ref="nicknameRef" defaultValue=""/>
+                <FormControl.Feedback />
+                <div style={styles.inputRequiredError}>{this.props.nicknameError}</div>
+                <HelpBlock>If none enter your first name.</HelpBlock>
               </FormGroup>
               <FormGroup>
                 <ControlLabel>Street Address *</ControlLabel>

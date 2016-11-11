@@ -8,6 +8,7 @@ export default function () {
 console.log("HI",userInfoObj)
       check(userInfoObj.fullName, String)
       check(userInfoObj.surname, String)
+      check(userInfoObj.nickname, String)
       Meteor.users.update(_id, {$set: {profile: userInfoObj}})
     }
   });

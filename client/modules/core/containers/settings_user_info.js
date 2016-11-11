@@ -8,6 +8,7 @@ export const composer = ({context, clearErrors}, onData) => {
   propsObj.saveSuccess = LocalState.get('SAVING_SUCCESS_FLAG')
   propsObj.fullNameError = LocalState.get('SAVING_ERROR_FULLNAME_REQUIRED')
   propsObj.surnameError = LocalState.get('SAVING_ERROR_SURNAME_REQUIRED')
+  propsObj.nicknameError = LocalState.get('SAVING_ERROR_NICKNAME_REQUIRED')
   propsObj.schemaError = LocalState.get('SAVING_ERROR')
   if (Meteor.subscribe('user_profile', Meteor.userId()).ready()) {
     let user_profile = Meteor.users.findOne(Meteor.userId())
