@@ -13,10 +13,44 @@ console.log("_id:",_id)
   }
   render() {
     let {fullName, surname, nickname} = this.props.contactDetails.profile
+    let {userConnectRequest, contactConnectRequest} = this.props.contactDetails
+
+    let btnBsStyle = () => {
+      if (userConnectRequest || contactConnectRequest) {
+        if (userConnectRequest)
+          return "warning"
+        if (contactConnectRequest)
+          return "danger"
+      } else {
+        return "info"
+      }
+    }
+    let btnDisabledInd = () => {
+      if (userConnectRequest)
+        return true
+      else
+        return false
+    }
+    let btnText = () => {
+      if (userConnectRequest || contactConnectRequest) {
+        if (userConnectRequest)
+          return "Requested"
+        if (contactConnectRequest)
+          return "Confirm"
+      } else {
+        return "Connect"
+      }
+    }
+    let btnClickEvent = this._connectContactRequest.bind(this)
+
     const title = (
       <div>
         {/* <h4>Contacts</h4> */}
-        <Button bsStyle="success" onClick={this._connectContactRequest.bind(this)}>Connect</Button>
+        <Button bsStyle={btnBsStyle()}
+                onClick={btnClickEvent}
+                disabled={btnDisabledInd()}>
+                  {btnText()}
+        </Button>
       </div>
     );
     return (
