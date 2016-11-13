@@ -6,7 +6,7 @@ export default function () {
 
   Meteor.methods({
     'search_users_regex'(searchString) {
-console.log('search_users_regex',searchString)
+      //Find hits for every string(seperated by space) in search bar.
       let finalCursor = searchString.split(' ').reduce((cursorPrev,subString) => {
         let cursorSub =  Meteor.users.find({ $or: [
           { "profile.fullName": { $regex: subString, $options: "i" }},

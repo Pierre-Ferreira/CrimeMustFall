@@ -59,7 +59,13 @@ class ContactsInfoCardSmall extends React.Component {
         return this._connectContactRequest.bind(this)
       }
     }
-
+    let panelBsStyle = () => {
+      if (contactConnected) {
+          return "primary"
+      } else {
+        return "primary"
+      }
+    }
     const title = (
       <div>
         {/* <h4>Contacts</h4> */}
@@ -73,7 +79,7 @@ class ContactsInfoCardSmall extends React.Component {
     );
     return (
       <Col sm={4}>
-        <Panel header={title} bsStyle="primary">
+        <Panel header={title} bsStyle={panelBsStyle()}>
             <div><b>Name:</b> {fullName} {surname}</div>
             <div><b>A.k.a:</b> {nickname}</div>
         </Panel>

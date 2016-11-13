@@ -11,3 +11,5 @@ import auth_wrapper from './auth_wrapper';
 import main_layout from './main_layout';
 import emergency_contacts_search from './emergency_contacts_search';
 import contacts_info_card_small from './contacts_info_card_small';
+import my_contact_list from './my_contact_list';
+import my_contact_list from './my_contact_list';
