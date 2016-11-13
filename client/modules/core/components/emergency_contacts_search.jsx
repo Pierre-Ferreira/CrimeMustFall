@@ -20,7 +20,8 @@ class EmergencyContactsSearch extends React.Component{
     searchEmergencyContacts(formattedSearchStr)
   }
   render() {
-    let {searchCursor} = this.props.searchCursor?this.props:[]
+    let {searchCursor} = (this.props || this.props.searchCursor) ? this.props : undefined
+    searchCursor = searchCursor ? searchCursor : []
 console.log('searchCursor',searchCursor)
     return (
       <div>
@@ -34,10 +35,10 @@ console.log('searchCursor',searchCursor)
           </FormGroup>
         </Form>
         <div>
-          {searchCursor ? searchCursor.map((user, index) => (
+          {searchCursor.length !== 0 ? searchCursor.map((user, index) => (
             /* <div key={user._id}>{user._id} {user.profile.fullName} {user.profile.surname}</div> */
             <ContactsInfoCardSmall key={index} contactDetails={user} />
-          )): ''}
+          )): 'No Result'}
         </div>
       </div>
     )
