@@ -12,9 +12,9 @@ export default {
           for(let y = 0; y < result[x].length; y++) {
             // Check if the contact is connected to the user.
             let contactsConnectedArr = result[x][y].profile &&
-                                       result[x][y].profile.contacts &&
-                                       result[x][y].profile.contacts.connected ||
-                                       []
+                                  result[x][y].profile.contacts &&
+                                  result[x][y].profile.contacts.connected ||
+                                  []
             for(let z = 0; z < contactsConnectedArr.length; z++) {
               if (contactsConnectedArr[z] === Meteor.userId()) {
                 result[x][y].contactConnected = true
@@ -25,9 +25,9 @@ export default {
             }
             // Check if the user has a connect request form the contact.
             let requestedByMeArr = result[x][y].profile &&
-                                   result[x][y].profile.contacts &&
-                                   result[x][y].profile.contacts.requestedByMe ||
-                                   []
+                                  result[x][y].profile.contacts &&
+                                  result[x][y].profile.contacts.requestedByMe ||
+                                  []
             for(let z = 0; z < requestedByMeArr.length; z++) {
               if (requestedByMeArr[z] === Meteor.userId()) {
                 result[x][y].contactConnectRequest = true
