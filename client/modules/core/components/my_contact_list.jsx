@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactsInfoCardSmall from './contacts_info_card_small.jsx'
+import ContactsInfoCardSmall from '../containers/contacts_info_card_small.js'
 
 import {Panel} from 'react-bootstrap'
 
@@ -12,16 +12,15 @@ class MyContactList extends React.Component {
     const title = (
         <h4>My contacts</h4>
     )
-    let {searchCursor} = (this.props || this.props.searchCursor) ? this.props : undefined
-    searchCursor = searchCursor ? searchCursor : []
-console.log('searchCursor',searchCursor)
+    let {my_contacts} = (this.props || this.props.my_contacts) ? this.props : undefined
+    my_contacts = my_contacts ? my_contacts : []
+console.log('my_contacts',my_contacts)
     return (
       <div>
         <Panel header={title}>
           <div>
-            {searchCursor.length !== 0 ? searchCursor.map((user, index) => (
-              /* <div key={user._id}>{user._id} {user.profile.fullName} {user.profile.surname}</div> */
-              <ContactsInfoCardSmall key={index} contactDetails={user} />
+            {my_contacts.length !== 0 ? my_contacts.map((my_contact_id, index) => (
+              <ContactsInfoCardSmall key={index} contactID={my_contact_id} />
             )): 'No Result'}
           </div>
         </Panel>

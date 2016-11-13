@@ -4,11 +4,12 @@ import MyContactList from '../components/my_contact_list.jsx';
 
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
-  if (Meteor.subscribe('my_contacts_list_search', Meteor.userId()).ready()) {
-    let user_profile_contacts = Meteor.users.findOne(Meteor.userId()).profile.contacts.connected
+console.log('my_contacts_list IN:')
+  if (Meteor.subscribe('get_contact_profile', Meteor.userId()).ready()) {
+    let my_contacts = Meteor.users.findOne(Meteor.userId()).profile.contacts.connected
 
-console.log('user_profile_contacts:',user_profile_contacts)
-    onData(null, user_profile_contacts); // IS THERE A BETTER WAY? IS THIS BEST PRACTICE?
+console.log('my_contactsCONTAINER:', {my_contacts})
+    onData(null, {my_contacts}); // IS THERE A BETTER WAY? IS THIS BEST PRACTICE?
   }
 };
 

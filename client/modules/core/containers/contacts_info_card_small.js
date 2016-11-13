@@ -5,10 +5,8 @@ import ContactsInfoCardSmall from '../components/contacts_info_card_small.jsx';
 export const composer = (infoObj, onData) => {
 console.log("infoObj::",infoObj)
   let {context} = infoObj
-// console.log("context::",context())
   const {Meteor, Collections} = context();
-  let {_id} = infoObj.contactDetails
-  let contactID = _id
+  let {contactID} = infoObj
 console.log("contactID::",contactID)
   if (Meteor.subscribe('get_contact_profile',contactID).ready()){
     let contactDetails = Meteor.users.findOne(contactID)

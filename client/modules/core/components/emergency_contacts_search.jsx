@@ -37,7 +37,7 @@ console.log('searchCursor',searchCursor)
         <div>
           {searchCursor.length !== 0 ? searchCursor.map((user, index) => (
             /* <div key={user._id}>{user._id} {user.profile.fullName} {user.profile.surname}</div> */
-            <ContactsInfoCardSmall key={index} contactDetails={user} />
+            <ContactsInfoCardSmall key={index} contactID={user} />
           )): 'No Result'}
         </div>
       </div>
