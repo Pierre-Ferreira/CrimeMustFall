@@ -1,9 +1,13 @@
 export default {
   searchEmergencyContacts({Meteor, LocalState, FlowRouter}, searchString) {
+    LocalState.set('SEARCH_USERS_REGEX_CURSOR', [])
+console.log("HELLLOO",searchString, searchString.length, searchString.length === 0, LocalState.get('SEARCH_USERS_REGEX_CURSOR'))
+    if (searchString.length === 0)
+      return
     Meteor.call('search_users_regex', searchString, (err,result) =>{
       if (err) {
         LocalState.set('SEARCH_ERROR',err.message)
-        console.log('ERR','LOCALSTATE',LocalState.get('SEARCH_ERROR'))
+console.log('ERR','LOCALSTATE',LocalState.get('SEARCH_ERROR'))
       } else {
         // Result is a multi array because each string (space seperated) in search bar returns an array.
         let idArr = []
@@ -13,7 +17,6 @@ export default {
           for(let y = 0; y < result[x].length; y++) {
             // Leave out the current user. Do not display it.
             if(result[x][y]._id !== Meteor.userId())
-              // objArr.push(result[x][y])
               idArr.push(result[x][y]._id)
           }
         }

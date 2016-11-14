@@ -4,8 +4,14 @@ import ContactsRequestedByMeList from '../components/contacts_requested_by_me_li
 
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
-
-  onData(null, {});
+console.log('requestedByMe IN:')
+  if (Meteor.subscribe('get_contact_profile', Meteor.userId()).ready()) {
+    let contactsRequestedByMe = Meteor.users.findOne(Meteor.userId()).profile
+                                && Meteor.users.findOne(Meteor.userId()).profile.contacts
+                                && Meteor.users.findOne(Meteor.userId()).profile.contacts.requestedByMe
+console.log('contactsRequestedByMeCONTAINER:', {contactsRequestedByMe})
+    onData(null, {contactsRequestedByMe}); // IS THERE A BETTER WAY? IS THIS BEST PRACTICE?
+  }
 };
 
 export const depsMapper = (context, actions) => ({

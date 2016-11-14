@@ -14,3 +14,5 @@ import contacts_info_card_small from './contacts_info_card_small';
 import my_contact_list from './my_contact_list';
 import my_contact_list from './my_contact_list';
 import contacts_requested_by_me_list from './contacts_requested_by_me_list';
+import contacts_requests_to_me from './contacts_requests_to_me';
+import contacts_requests_to_me_list from './contacts_requests_to_me_list';

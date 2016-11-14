@@ -12,18 +12,17 @@ class MyContactList extends React.Component {
     const title = (
         <h4>My contacts</h4>
     )
-    let {my_contacts} = (this.props || this.props.my_contacts) ? this.props : undefined
-    my_contacts = my_contacts ? my_contacts : []
-console.log('my_contacts',my_contacts)
+    let {myContacts} = this.props
+    myContacts = myContacts ? myContacts : []
+console.log('myContacts',myContacts)
     return (
       <div>
-        <Panel header={title}>
-          <div>
-            {my_contacts.length !== 0 ? my_contacts.map((my_contact_id, index) => (
-              <ContactsInfoCardSmall key={index} contactID={my_contact_id} />
-            )): 'No Result'}
-          </div>
-        </Panel>
+        <Panel header={title}></Panel>
+        <div>
+          {myContacts.length !== 0 ? myContacts.map((contact_id, index) => (
+            <ContactsInfoCardSmall key={index} contactID={contact_id} />
+          )): 'No Result'}
+        </div>
       </div>
     );
   }

@@ -6,10 +6,12 @@ export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
 console.log('my_contacts_list IN:')
   if (Meteor.subscribe('get_contact_profile', Meteor.userId()).ready()) {
-    let my_contacts = Meteor.users.findOne(Meteor.userId()).profile.contacts.connected
+    let myContacts = Meteor.users.findOne(Meteor.userId()).profile
+                      && Meteor.users.findOne(Meteor.userId()).profile.contacts
+                      && Meteor.users.findOne(Meteor.userId()).profile.contacts.connected
 
-console.log('my_contactsCONTAINER:', {my_contacts})
-    onData(null, {my_contacts}); // IS THERE A BETTER WAY? IS THIS BEST PRACTICE?
+console.log('my_contactsCONTAINER:', {myContacts})
+    onData(null, {myContacts}); // IS THERE A BETTER WAY? IS THIS BEST PRACTICE?
   }
 };
 

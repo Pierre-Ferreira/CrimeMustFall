@@ -8,6 +8,8 @@ import Homepage from './components/home_page.jsx';
 import SettingsUserInfo from './containers/settings_user_info'
 import EmergencyContactsSearch from './containers/emergency_contacts_search.js'
 import MyContactList from './containers/my_contact_list.js'
+import ContactsRequestedByMeList from './containers/contacts_requested_by_me_list.js'
+import ContactsRequestsToMeList from './containers/contacts_requests_to_me_list.js'
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -49,6 +51,22 @@ export default function (injectDeps, {FlowRouter}) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (<MyContactList />)
+      });
+    }
+  });
+  FlowRouter.route('/requested_by_me', {
+    name: 'requestedbyme',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<ContactsRequestedByMeList />)
+      });
+    }
+  });
+  FlowRouter.route('/requests_to_me', {
+    name: 'requeststome',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<ContactsRequestsToMeList />)
       });
     }
   });
