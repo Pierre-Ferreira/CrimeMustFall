@@ -9,6 +9,10 @@ console.log("HI",userInfoObj)
       check(userInfoObj.fullName, String)
       check(userInfoObj.surname, String)
       check(userInfoObj.nickname, String)
+      check(userInfoObj.address, String)
+      check(userInfoObj.suburb, String)
+      check(userInfoObj.city, String)
+      check(userInfoObj.contactNo, String)
       Meteor.users.update(_id, {$set: {profile: userInfoObj}})
     }
   });
