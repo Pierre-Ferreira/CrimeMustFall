@@ -6,7 +6,9 @@ export default function () {
   Meteor.methods({
     'chat_message_create'() {
       let userDoc = Meteor.users.findOne(Meteor.userId())
-      let userContacts = userDoc.profile.contacts.connected
+      let userContacts = userDoc.profile
+                        && userDoc.profile.contacts
+                        && userDoc.profile.contacts.connected
       let newMsgObj = {
         createdAt: new Date(),
         initiator_id: Meteor.userId(),

@@ -16,6 +16,7 @@ console.log('Meteor.userId():',Meteor.userId())
 
 export const depsMapper = (context, actions) => ({
   createNewChat: actions.chat_create_new.createNewChat,
+  goToChat: actions.go_to_chat.goToChat,
   context: () => context
 });
 

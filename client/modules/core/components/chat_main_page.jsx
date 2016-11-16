@@ -10,6 +10,10 @@ class ChatMainPage extends React.Component {
     let { createNewChat } = this.props
     createNewChat()
   }
+  GoToChat (chatId) {
+    let { goToChat } = this.props
+    goToChat(chatId)
+  }
   render() {
     let {myChatsInitiated, myChatsAlerted} = this.props
     let monthNames = [
@@ -26,6 +30,7 @@ class ChatMainPage extends React.Component {
         <Button bsStyle="danger" bsSize="large" block onClick={this.CreateNewChat.bind(this)}> NEW ALERT</Button>
         <h4>My Alerts</h4>
         {myChatsInitiated.map((chat, index) => {
+          let chatId = chat._id
           let initiator_id = chat.initiator_id
           let createdAt = chat.createdAt
           let day = createdAt.getDate();
@@ -33,12 +38,13 @@ class ChatMainPage extends React.Component {
           let year = createdAt.getFullYear();
           let displayDate = `${day} ${monthNames[monthIndex]} ${year}`
           let displayTime = `${createdAt.getHours()}:${createdAt.getMinutes()}`
-          return <Button style={btnStyles} bsStyle="warning" bsSize="large" block key={index}>
+          return <Button style={btnStyles} bsStyle="warning" bsSize="large" block key={index} onClick={this.GoToChat.bind(this, chatId)}>
               Date of Alert: {displayDate} ({displayTime})
           </Button>
         })}
         <h4>Alerts I was include in</h4>
         {myChatsAlerted.map((chat, index) => {
+          let chatId = chat._id
           let initiator_id = chat.initiator_id
           let createdAt = chat.createdAt
           let day = createdAt.getDate();
@@ -46,7 +52,7 @@ class ChatMainPage extends React.Component {
           let year = createdAt.getFullYear();
           let displayDate = `${day} ${monthNames[monthIndex]} ${year}`
           let displayTime = `${createdAt.getHours()}:${createdAt.getMinutes()}`
-          return <Button style={btnStyles} bsStyle="primary" bsSize="large" block key={index}>
+          return <Button style={btnStyles} bsStyle="primary" bsSize="large" block key={index} onClick={this.GoToChat.bind(this, chatId)}>
               Date of Alert: {displayDate} ({displayTime})
           </Button>
         })}
