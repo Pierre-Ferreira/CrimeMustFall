@@ -13,8 +13,7 @@ class ChatMainPage extends React.Component {
   render() {
     return (
       <div>
-        ChatMainPage
-        <Button onClick={this.CreateNewChat.bind(this)}> NEW ALERT</Button>
+        <Button bsStyle="danger" bsSize="large" block onClick={this.CreateNewChat.bind(this)}> NEW ALERT</Button>
       </div>
     );
   }

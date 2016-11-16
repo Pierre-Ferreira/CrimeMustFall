@@ -4,7 +4,6 @@ export default {
       if (err)
         return Meteor.err.message
       else {
-console.log(result)
         FlowRouter.go("/chat_page/"+result)
       }
     })

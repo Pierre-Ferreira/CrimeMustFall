@@ -6,13 +6,14 @@ import {check} from 'meteor/check';
 export default function () {
   Meteor.methods({
     'chat_message_create'() {
+      let userDoc = Meteor.users.findOne(Meteor.userId())
+      let userContacts = userDoc.profile.contacts.connected
       let newMsgObj = {
         createdAt: new Date(),
         initiator_id: Meteor.userId(),
-        contacts_alerted_ids: [],
-        message: []
+        contacts_alerted_ids: userContacts,
+        messages: []
       }
-console.log('newMsgObj:',newMsgObj)
       return AlertConversations.insert(newMsgObj)
     }
   });

@@ -9,7 +9,6 @@ class ChatPage extends React.Component {
   render() {
     return (
       <div>
-        ChatPage
         <ChatInputField chat_id={this.props.chat_id}/>
       </div>
     );

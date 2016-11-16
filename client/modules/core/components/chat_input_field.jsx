@@ -12,8 +12,8 @@ class ChatInputField extends React.Component {
     let { messageInputRef } = this.refs
     let messageInput = ReactDOM.findDOMNode(messageInputRef).value
     let { chatMessageSend, chat_id } = this.props
-console.log('messageInput1:',messageInput, chat_id)
     chatMessageSend(messageInput, chat_id)
+    ReactDOM.findDOMNode(messageInputRef).value = ""
   }
   render() {
     return (
@@ -21,10 +21,10 @@ console.log('messageInput1:',messageInput, chat_id)
         <Grid>
           <Col>
             <Panel>
-              <Form inline onSubmit={this.messageInputSend.bind(this)}  >
+              <Form inline onSubmit={this.messageInputSend.bind(this)} >
                 <FormGroup>
                   <InputGroup>
-                    <FormControl type="text" ref="messageInputRef"/>
+                    <FormControl type="text" ref="messageInputRef" placeholder="Enter text" />
                     <InputGroup.Button>
                       <Button type='submit' bsStyle={"primary"}>
                         SEND
