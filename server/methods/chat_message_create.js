@@ -1,4 +1,3 @@
-// import {ChatMessageCreate} from '/lib/collections';
 import {AlertConversations} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';

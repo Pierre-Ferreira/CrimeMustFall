@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from 'react-bootstrap'
+import { Button, Panel } from 'react-bootstrap'
 
 class ChatMainPage extends React.Component {
   constructor(props) {
@@ -11,9 +11,45 @@ class ChatMainPage extends React.Component {
     createNewChat()
   }
   render() {
+    let {myChatsInitiated, myChatsAlerted} = this.props
+    let monthNames = [
+      "January", "February", "March",
+      "April", "May", "June", "July",
+      "August", "September", "October",
+      "November", "December"
+    ];
+    const btnStyles = { margin: '0 auto 10px',
+                        whiteSpace: 'normal'
+                      };
     return (
       <div>
         <Button bsStyle="danger" bsSize="large" block onClick={this.CreateNewChat.bind(this)}> NEW ALERT</Button>
+        <h4>My Alerts</h4>
+        {myChatsInitiated.map((chat, index) => {
+          let initiator_id = chat.initiator_id
+          let createdAt = chat.createdAt
+          let day = createdAt.getDate();
+          let monthIndex = createdAt.getMonth();
+          let year = createdAt.getFullYear();
+          let displayDate = `${day} ${monthNames[monthIndex]} ${year}`
+          let displayTime = `${createdAt.getHours()}:${createdAt.getMinutes()}`
+          return <Button style={btnStyles} bsStyle="warning" bsSize="large" block key={index}>
+              Date of Alert: {displayDate} ({displayTime})
+          </Button>
+        })}
+        <h4>Alerts I was include in</h4>
+        {myChatsAlerted.map((chat, index) => {
+          let initiator_id = chat.initiator_id
+          let createdAt = chat.createdAt
+          let day = createdAt.getDate();
+          let monthIndex = createdAt.getMonth();
+          let year = createdAt.getFullYear();
+          let displayDate = `${day} ${monthNames[monthIndex]} ${year}`
+          let displayTime = `${createdAt.getHours()}:${createdAt.getMinutes()}`
+          return <Button style={btnStyles} bsStyle="primary" bsSize="large" block key={index}>
+              Date of Alert: {displayDate} ({displayTime})
+          </Button>
+        })}
       </div>
     );
   }
