@@ -10,6 +10,7 @@ import EmergencyContactsSearch from './containers/emergency_contacts_search.js'
 import MyContactList from './containers/my_contact_list.js'
 import ContactsRequestedByMeList from './containers/contacts_requested_by_me_list.js'
 import ContactsRequestsToMeList from './containers/contacts_requests_to_me_list.js'
+import ChatMainPage from './containers/chat_main_page.js'
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -67,6 +68,14 @@ export default function (injectDeps, {FlowRouter}) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (<ContactsRequestsToMeList />)
+      });
+    }
+  });
+  FlowRouter.route('/chats_main_page/:chat_id', {
+    name: 'chatsmainpage',
+    action({chat_id}) {
+      mount(MainLayoutCtx, {
+        content: () => (<ChatMainPage chat_id={chat_id}/>)
       });
     }
   });
