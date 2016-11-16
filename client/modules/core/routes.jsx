@@ -11,6 +11,7 @@ import MyContactList from './containers/my_contact_list.js'
 import ContactsRequestedByMeList from './containers/contacts_requested_by_me_list.js'
 import ContactsRequestsToMeList from './containers/contacts_requests_to_me_list.js'
 import ChatMainPage from './containers/chat_main_page.js'
+import ChatPage from './containers/chat_page.js'
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -71,11 +72,19 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
-  FlowRouter.route('/chats_main_page/:chat_id', {
+  FlowRouter.route('/chats_main_page', {
     name: 'chatsmainpage',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<ChatMainPage />)
+      });
+    }
+  });
+  FlowRouter.route('/chat_page/:chat_id', {
+    name: 'chatpage',
     action({chat_id}) {
       mount(MainLayoutCtx, {
-        content: () => (<ChatMainPage chat_id={chat_id}/>)
+        content: () => (<ChatPage chat_id={chat_id}/>)
       });
     }
   });

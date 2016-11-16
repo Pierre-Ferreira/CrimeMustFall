@@ -41,9 +41,9 @@ console.log('searchCursor2',searchCursor)
           </Form>
         </Panel>
         <div>
-          {searchCursor.length !== 0 ? searchCursor.map((user, index) => (
-            <ContactsInfoCardSmall key={index} contactID={user} />
-          )): 'No Result'}
+          {searchCursor.length !== 0 ? searchCursor.map((user, index) => {
+            return <ContactsInfoCardSmall key={index} contactID={user} />
+          }): 'No Result'}
         </div>
       </div>
     )

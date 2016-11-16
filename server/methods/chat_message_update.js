@@ -12,7 +12,7 @@ export default function () {
         sender_id: Meteor.userId(),
         content: messageStr
       }
-console.log('msgObj:',msgObj)
+console.log("chat_id", chat_id, 'msgObj:', msgObj)
       AlertConversations.update(chat_id, { $push: { 'message' : msgObj } })
       // AlertConversations.insert({ 'message' : [] })
     }

@@ -1,19 +1,20 @@
 import React from 'react';
-import ChatInputField from '../containers/chat_input_field'
+
+import { Button } from 'react-bootstrap'
 
 class ChatMainPage extends React.Component {
   constructor(props) {
     super(props);
-    console.log("YEPPPPconstructor")
   }
-  componentWillMount() {
-    console.log("YEPPPPcomponentWillMount")
+  CreateNewChat () {
+    let { createNewChat } = this.props
+    createNewChat()
   }
   render() {
     return (
       <div>
         ChatMainPage
-        <ChatInputField chat_id={this.props.chat_id}/>
+        <Button onClick={this.CreateNewChat.bind(this)}> NEW ALERT</Button>
       </div>
     );
   }

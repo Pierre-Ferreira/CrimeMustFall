@@ -12,7 +12,7 @@ const NavbarMain = () => (
     <Navbar.Collapse>
       <Nav>
         <NavItem eventKey={1} href="/home">Home</NavItem>
-        <NavItem eventKey={2} href="/chats_main_page/Cpg2BtdbtD97j77Tn">ALERT</NavItem>
+        <NavItem eventKey={2} href="/chats_main_page">ALERT</NavItem>
         <NavDropdown eventKey={3} title="Contacts" id="basic-nav-dropdown">
           <MenuItem eventKey={3.1} href="/contacts_search">Contacts search</MenuItem>
           <MenuItem divider />
