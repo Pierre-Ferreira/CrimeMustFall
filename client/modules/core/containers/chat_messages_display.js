@@ -23,7 +23,7 @@ console.log(chat_id)
       let message_meta = {}
       if (Meteor.subscribe('get_contact_profile',contactID).ready()) {
         let contactProfile = Meteor.users.findOne(contactID).profile
-        message_meta.initiator_name = `${contactProfile.fullName} ${contactProfile.surname}`
+        message_meta.senderName = `${contactProfile.fullName} "${contactProfile.nickname}" ${contactProfile.surname}`
         message_meta.address = contactProfile.address
         message_meta.suburb = contactProfile.suburb
         message_meta.city = contactProfile.city

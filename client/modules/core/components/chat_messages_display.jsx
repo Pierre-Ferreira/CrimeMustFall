@@ -16,8 +16,9 @@ console.log('ChatMessagesDisplay:',messagesArr,this.props)
                 <div className="row msg_container base_initiator" key={index}>
                   <div>
                     <div className="messageBubbleLeft msg_initiator">
+                      <metaPost> {messageObj.metaInfo.senderName} - {messageObj.messageDate} @ {messageObj.messageTime}</metaPost>
                       <p> {messageObj.content}</p>
-                      <metaPost>{messageObj.messageDate}</metaPost>
+                      <metaPost>{messageObj.metaInfo.address}, {messageObj.metaInfo.suburb}, {messageObj.metaInfo.city}</metaPost>
                     </div>
                   </div>
                 </div>
@@ -25,13 +26,14 @@ console.log('ChatMessagesDisplay:',messagesArr,this.props)
 
             } else {
               return (
-                <div className="row msg_container base_responder">
+                <div className="row msg_container base_responder" key={index}>
                   <div>
-                      <div className="messageBubbleRight msg_responder">
-                            <p> {messageObj.content}</p>
-                            <metaPost>{messageObj.messageDate}</metaPost>
-                        </div>
+                    <div className="messageBubbleRight msg_responder">
+                      <metaPost>{messageObj.metaInfo.senderName} - {messageObj.messageDate} @ {messageObj.messageTime}</metaPost>
+                      <p> {messageObj.content}</p>
+                      <metaPost>{messageObj.metaInfo.address}, {messageObj.metaInfo.suburb}, {messageObj.metaInfo.city}</metaPost>
                     </div>
+                  </div>
                 </div>
               )
             }
