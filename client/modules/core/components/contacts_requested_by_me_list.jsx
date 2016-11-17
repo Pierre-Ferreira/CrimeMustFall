@@ -12,11 +12,8 @@ class ContactsRequestedByMeList extends React.Component {
     const title = (
         <h4>Contacts Requested By Me</h4>
     )
-    // let {contactsRequestedByMe} = (this.props || this.props.contactsRequestedByMe) ? this.props : undefined
     let {contactsRequestedByMe} = this.props
-console.log('contactsRequestedByMe1',contactsRequestedByMe)
     contactsRequestedByMe = contactsRequestedByMe ? contactsRequestedByMe : []
-console.log('contactsRequestedByMe2',contactsRequestedByMe)
     return (
       <div>
         <Panel header={title}></Panel>

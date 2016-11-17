@@ -15,7 +15,8 @@ export default function () {
       check(userInfoObj.contactNo, String)
 
 // Extract the profile from the user document.
-      let user_cursor = Meteor.users.findOne({"_id":_id}, {fields: {profile: 1}})
+      let user_cursor = Meteor.users.findOne({"_id":_id})
+      user_cursor.profile = user_cursor.profile || {}
 
 // Set the necessary fields in the profile.
       user_cursor.profile.fullName = userInfoObj.fullName
