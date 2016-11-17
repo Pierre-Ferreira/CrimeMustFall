@@ -32,6 +32,7 @@ console.log(chat_id)
       return messageObj
     })
 console.log(messagesArr)
+    messagesArr.reverse()
     onData(null, {messagesArr});
   }
 };

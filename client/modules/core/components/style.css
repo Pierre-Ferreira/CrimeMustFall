@@ -43,6 +43,10 @@ body{
 }
 .msg_container_base{
   background: lightblue;
+  border-width: thin;
+  border-color: black;
+  border-style: groove;
+  border-radius: 6px;
   margin: 15px;
   padding: 0 10px 10px;
   max-height:300px;
@@ -129,11 +133,11 @@ body{
     text-align: left;
     width: '';
     padding: 2px;
-    background: #ACFFFF;
+    background: rgba(123, 152, 152, 0.43);
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    border: #009DFF solid 2px;
+    border: #5c6c75 solid 2px;
 }
 .messageBubbleRight:after
 {
@@ -141,7 +145,7 @@ body{
     position: absolute;
     border-style: solid;
     border-width: 3px 0 3px 10px;
-    border-color: transparent #ACFFFF;
+    border-color: transparent #97bdc5;
     display: block;
     width: 0;
     z-index: 1;
@@ -156,7 +160,7 @@ body{
     position: absolute;
     border-style: solid;
     border-width: 4px 0 4px 11px;
-    border-color: transparent #009DFF;
+    border-color: transparent #5c6c75;
     display: block;
     width: 0;
     z-index: 0;
@@ -174,7 +178,7 @@ body{
     float: right;
 }
 .msg_container {
-    padding: 10px;
+    padding: 10px 25px;
     overflow: hidden;
     display: flex;
 }
