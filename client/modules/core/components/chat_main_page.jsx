@@ -16,12 +16,7 @@ class ChatMainPage extends React.Component {
   }
   render() {
     let {myChatsInitiated, myChatsAlerted} = this.props
-    let monthNames = [
-      "January", "February", "March",
-      "April", "May", "June", "July",
-      "August", "September", "October",
-      "November", "December"
-    ];
+    let {displayTime, displayDate} = this.props.global_functions
     const btnStyles = { margin: '0 auto 10px',
                         whiteSpace: 'normal'
                       };
@@ -31,15 +26,11 @@ class ChatMainPage extends React.Component {
         <h4>My Alerts</h4>
         {myChatsInitiated.map((chat, index) => {
           let chatId = chat._id
-          let initiator_id = chat.initiator_id
           let createdAt = chat.createdAt
-          let day = createdAt.getDate();
-          let monthIndex = createdAt.getMonth();
-          let year = createdAt.getFullYear();
-          let displayDate = `${day} ${monthNames[monthIndex]} ${year}`
-          let displayTime = `${createdAt.getHours()}:${createdAt.getMinutes()}`
+          let displayDateStr = displayDate(createdAt)
+          let displayTimeStr = displayTime(createdAt)
           return <Button style={btnStyles} bsStyle="warning" bsSize="large" block key={index} onClick={this.GoToChat.bind(this, chatId)}>
-              Date of Alert: {displayDate} ({displayTime})
+              Date of Alert: {displayDateStr} ({displayTimeStr})
           </Button>
         })}
         <h4>Alerts I was include in</h4>
@@ -47,13 +38,10 @@ class ChatMainPage extends React.Component {
           let chatId = chat._id
           let initiator_id = chat.initiator_id
           let createdAt = chat.createdAt
-          let day = createdAt.getDate();
-          let monthIndex = createdAt.getMonth();
-          let year = createdAt.getFullYear();
-          let displayDate = `${day} ${monthNames[monthIndex]} ${year}`
-          let displayTime = `${createdAt.getHours()}:${createdAt.getMinutes()}`
+          let displayDateStr = displayDate(createdAt)
+          let displayTimeStr = displayTime(createdAt)
           return <Button style={btnStyles} bsStyle="primary" bsSize="large" block key={index} onClick={this.GoToChat.bind(this, chatId)}>
-              Date of Alert: {displayDate} ({displayTime})
+              Date of Alert: {displayDateStr} ({displayTimeStr})
           </Button>
         })}
       </div>

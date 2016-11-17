@@ -19,3 +19,4 @@ import contacts_requests_to_me_list from './contacts_requests_to_me_list';
 import chat_input_field from './chat_input_field';
 import chat_main_page from './chat_main_page';
 import chat_page from './chat_page';
+import chat_messages_display from './chat_messages_display';
