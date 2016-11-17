@@ -9,7 +9,6 @@ export const composer = (infoObj, onData) => {
   const {Meteor, Collections, global_functions} = context();
   let displayDate = global_functions.displayDate
   let displayTime = global_functions.displayTime
-console.log(chat_id)
   if (Meteor.subscribe('get_chat_messages',chat_id).ready()) {
     let messageDoc = AlertConversations.findOne(chat_id)
     let initiator_id = messageDoc.initiator_id
@@ -31,7 +30,6 @@ console.log(chat_id)
       messageObj.metaInfo = message_meta
       return messageObj
     })
-console.log(messagesArr)
     messagesArr.reverse()
     onData(null, {messagesArr});
   }

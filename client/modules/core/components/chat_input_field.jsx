@@ -20,20 +20,18 @@ class ChatInputField extends React.Component {
       <div>
         <Grid>
           <Col>
-            <Panel>
-              <Form inline onSubmit={this.messageInputSend.bind(this)} >
-                <FormGroup>
-                  <InputGroup>
-                    <FormControl type="text" ref="messageInputRef" placeholder="Enter text" />
-                    <InputGroup.Button>
-                      <Button type='submit' bsStyle={"primary"}>
-                        SEND
-                      </Button>
-                    </InputGroup.Button>
-                  </InputGroup>
-                </FormGroup>
-              </Form>
-            </Panel>
+            <form inline onSubmit={this.messageInputSend.bind(this)} >
+              <FormGroup>
+                <InputGroup>
+                  <FormControl type="text" ref="messageInputRef" placeholder="Enter text" />
+                  <InputGroup.Button>
+                    <Button type='submit' bsStyle={"primary"}>
+                      SEND
+                    </Button>
+                  </InputGroup.Button>
+                </InputGroup>
+              </FormGroup>
+            </form>
           </Col>
         </Grid>
       </div>
