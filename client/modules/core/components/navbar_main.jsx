@@ -5,13 +5,13 @@ const NavbarMain = () => (
   <Navbar inverse collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="#">Crime Must Fall</a>
+        <a href="/">Crime Must Fall</a>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
       <Nav>
-        <NavItem eventKey={1} href="/home">Home</NavItem>
+        {/* <NavItem eventKey={1} href="/home">Home</NavItem> */}
         <NavItem eventKey={2} href="/chats_main_page">ALERT</NavItem>
         <NavDropdown eventKey={3} title="Contacts" id="basic-nav-dropdown">
           <MenuItem eventKey={3.1} href="/contacts_search">Contacts search</MenuItem>

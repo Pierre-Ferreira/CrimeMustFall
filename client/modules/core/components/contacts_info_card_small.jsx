@@ -16,7 +16,7 @@ class ContactsInfoCardSmall extends React.Component {
     contactConnectRequestConfirm(_id)
   }
   render() {
-    let {fullName, surname, nickname} = this.props.contactDetails.profile
+    let {fullName, surname, nickname, address, suburb, city, contactNo} = this.props.contactDetails.profile
     let {userConnectRequest, contactConnectRequest, contactConnected} = this.props.contactDetails
 
     let btnBsStyle = () => {
@@ -79,9 +79,13 @@ class ContactsInfoCardSmall extends React.Component {
     );
     return (
       <Col sm={4}>
-        <Panel header={title} bsStyle={panelBsStyle()}>
+        <Panel header={title} bsStyle={panelBsStyle()} className="contactsInfoCardSmallPanel">
             <div><b>Name:</b> {fullName} {surname}</div>
             <div><b>A.k.a:</b> {nickname}</div>
+            <div><b>Address:</b> {address} </div>
+            <div><b>Suburb:</b> {suburb}</div>
+            <div><b>City:</b> {city}</div>
+            <div><b>Contact No:</b> {contactNo}</div>
         </Panel>
       </Col>
     );

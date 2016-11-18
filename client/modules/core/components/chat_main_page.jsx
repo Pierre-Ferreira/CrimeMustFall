@@ -33,7 +33,7 @@ class ChatMainPage extends React.Component {
               Date of Alert: {displayDateStr} ({displayTimeStr})
           </Button>
         })}
-        <h4>Alerts I was include in</h4>
+        <h4>Contacts Alerts</h4>
         {myChatsAlerted.map((chat, index) => {
           let chatId = chat._id
           let initiator_id = chat.initiator_id

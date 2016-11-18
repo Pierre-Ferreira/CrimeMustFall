@@ -5,7 +5,7 @@ import AuthWrapper from '../containers/auth_wrapper'
 import { Col } from 'react-bootstrap'
 
 const MainLayout = ({content = () => null}) => (
-  <Col sm={8} smOffset={2} style = {{backgroundColor: '#8cb6c1'}}>
+  <Col sm={6} smOffset={3} className="mainLayout">
     <div>
       <AuthWrapper>
         <div><NavBarMain /></div>

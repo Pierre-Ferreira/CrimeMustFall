@@ -2,6 +2,76 @@ body{
     height:400px;
     position: relative;
     bottom: 0;
+    background-color: #EBEDF5;
+}
+.mainLayout {
+  background-color: #8cb6c1;
+  border-radius: 5px;
+}
+.panel {
+    margin-bottom: 10px !important;
+}
+.contactSearchInput {
+    background: aliceblue;
+}
+.contactsInfoCardSmallPanel {
+    height: 250px;
+    overflow: hidden;
+}
+.btn-success {
+    color: #fff;
+    background-color: #3C7655;
+    border-color: #3c763d;
+}
+.btn-success:hover {
+    color: #fff;
+    background-color: #39845C;
+    border-color: #398439;
+}
+.btn-success:focus {
+    color: #fff;
+    background-color: #39845C;
+    border-color: #255625;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #A94438;
+    border-color: #d43f3a;
+}
+.btn-danger:hover {
+    color: #fff;
+    background-color: #C93058;
+    border-color: #ac2925;
+}
+.btn-danger:focus {
+    color: #fff;
+    background-color: #C93058;
+    border-color: #761c19;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #F0AD63;
+    border-color: #eea236;
+}
+.btn-warning:hover {
+    color: #fff;
+    background-color: #EC973C;
+    border-color: #d58512;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #337A97;
+    border-color: #2e6da4;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #286089;
+    border-color: #204d74;
+}
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: #337A97;
+    border-color: #337ab7;
 }
 .chatHeader {
     padding: -1px;
@@ -78,7 +148,7 @@ body{
     position: relative;
     width: '';
     padding: 2px;
-    background: #FF0000;
+    background: #FF0070;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;

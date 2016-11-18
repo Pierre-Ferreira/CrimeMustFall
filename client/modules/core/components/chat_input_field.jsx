@@ -11,6 +11,7 @@ class ChatInputField extends React.Component {
     e.preventDefault()
     let { messageInputRef } = this.refs
     let messageInput = ReactDOM.findDOMNode(messageInputRef).value
+    if (messageInput.trim().length === 0) return
     let { chatMessageSend, chat_id } = this.props
     chatMessageSend(messageInput, chat_id)
     ReactDOM.findDOMNode(messageInputRef).value = ""
