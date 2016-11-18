@@ -7,12 +7,16 @@ body{
 .mainLayout {
   background-color: #8cb6c1;
   border-radius: 5px;
+  padding-bottom: 25px;
 }
 .panel {
     margin-bottom: 10px !important;
 }
 .contactSearchInput {
     background: aliceblue;
+}
+.alertAutoTextBtn {
+    margin: 5px;
 }
 .contactsInfoCardSmallPanel {
     height: 250px;

@@ -7,7 +7,7 @@ class ChatInputField extends React.Component {
   constructor(props) {
     super(props);
   }
-  messageInputSend(e){
+  _messageInputSend(e){
     e.preventDefault()
     let { messageInputRef } = this.refs
     let messageInput = ReactDOM.findDOMNode(messageInputRef).value
@@ -16,12 +16,23 @@ class ChatInputField extends React.Component {
     chatMessageSend(messageInput, chat_id)
     ReactDOM.findDOMNode(messageInputRef).value = ""
   }
+  _autoTextSend(alertAutoMessage) {
+    let { chatMessageSend, chat_id } = this.props
+    chatMessageSend(alertAutoMessage, chat_id)
+  }
   render() {
+    let alertAutoTextMessages = {
+      intruder: "INTRUDER ALERT!",
+      hi_jacking: "HI-JACKING ALERT!",
+      at_my_house: "AT MY HOUSE",
+      at_my_neighbour: "AT MY NEIGHBOUR",
+      at_this_position: "AT THIS POSITION:"
+    }
     return (
       <div>
         <Grid>
-          <Col>
-            <form inline onSubmit={this.messageInputSend.bind(this)} >
+          <Col xs={12}>
+            <Form horizontal onSubmit={this._messageInputSend.bind(this)} >
               <FormGroup>
                 <InputGroup>
                   <FormControl type="text" ref="messageInputRef" placeholder="Enter text" />
@@ -32,7 +43,33 @@ class ChatInputField extends React.Component {
                   </InputGroup.Button>
                 </InputGroup>
               </FormGroup>
-            </form>
+            </Form>
+            <Button  bsStyle={"warning"}
+                     className="alertAutoTextBtn"
+                     onClick={this._autoTextSend.bind(this,alertAutoTextMessages.intruder)}
+            >
+              INTRUDER
+            </Button>
+            <Button  bsStyle={"warning"}
+                     className="alertAutoTextBtn"
+                     onClick={this._autoTextSend.bind(this,alertAutoTextMessages.hi_jacking)}
+            >              HI-JACKING
+            </Button>
+            <Button  bsStyle={"warning"}
+                     className="alertAutoTextBtn"
+                     onClick={this._autoTextSend.bind(this,alertAutoTextMessages.at_my_house)}
+            >              AT MY HOUSE
+            </Button>
+            <Button  bsStyle={"warning"}
+                     className="alertAutoTextBtn"
+                     onClick={this._autoTextSend.bind(this,alertAutoTextMessages.at_my_neighbour)}
+            >              AT NEIGHBOUR
+            </Button>
+            <Button  bsStyle={"warning"}
+                     className="alertAutoTextBtn"
+                     onClick={this._autoTextSend.bind(this,alertAutoTextMessages.at_this_position)}
+            >              AT THIS POSITION:
+            </Button>
           </Col>
         </Grid>
       </div>
