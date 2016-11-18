@@ -56,32 +56,19 @@ class ChatAutoMessage extends React.Component {
       },
     ]
 
-
     let isInitiator = this.props.isInitiator
+    let autoButtonsArr = isInitiator ? alertButtonsArr : responderButtonsArr
     return (
       <div>
-        {isInitiator ?
-        (
-          {alertButtonsArr.map((alertAutoButton, index) => (
-            <Button  bsStyle={"warning"}
+          {autoButtonsArr.map((autoButton, index) => (
+            <Button  bsStyle={isInitiator ? "warning" : "primary"}
                      className="alertAutoTextBtn"
                      key={index}
-                     onClick={this._autoTextSend.bind(this,alertAutoButton.messageText)}
+                     onClick={this._autoTextSend.bind(this,autoButton.messageText)}
             >
-              {alertAutoButton.btnText}
+              {autoButton.btnText}
             </Button>
           ))}
-        ) : (
-          {responderButtonsArr.map((responderAutoButton, index) => (
-            <Button  bsStyle={"warning"}
-                     className="alertAutoTextBtn"
-                     key={index}
-                     onClick={this._autoTextSend.bind(this,responderAutoButton.messageText)}
-            >
-              {responderAutoButton.btnText}
-            </Button>
-          ))}
-        )
       </div>
     );
   }

@@ -14,7 +14,6 @@ class MyContactList extends React.Component {
     )
     let {myContacts} = this.props
     myContacts = myContacts ? myContacts : []
-console.log('myContacts',myContacts)
     return (
       <div>
         <Panel header={title}></Panel>

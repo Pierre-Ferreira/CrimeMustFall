@@ -13,9 +13,7 @@ class ContactsRequestsToMeList extends React.Component {
         <h4>Requests to me</h4>
     )
     let {contactsRequestsToMe} = this.props
-console.log('contactsRequestsToMe',contactsRequestsToMe)
     contactsRequestsToMe = contactsRequestsToMe ? contactsRequestsToMe : []
-console.log('contactsRequestsToMe',contactsRequestsToMe)
     return (
       <div>
         <Panel header={title}></Panel>

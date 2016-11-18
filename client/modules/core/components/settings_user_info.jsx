@@ -21,7 +21,7 @@ console.log('componentWillMount', this.props.saveSuccess)
   //   // Clear up all errors.
   //   clearErrors();
   // }
-  saveUserInfo(e) {
+  _saveUserInfo(e) {
     if (e && e.preventDefault)
       e.preventDefault()
     let { fullNameRef, surnameRef, nicknameRef, addressRef, suburbRef, cityRef, contactNoRef} = this.refs
@@ -59,7 +59,7 @@ console.log('componentWillMount', this.props.saveSuccess)
           <Panel>
             <h1>My Info</h1>
             <div style={styles.schemaError}>{this.props.schemaError}</div>
-            <form onSubmit={this.saveUserInfo.bind(this)}  >
+            <form onSubmit={this._saveUserInfo.bind(this)}  >
               <FormGroup validationState={this.props.saveSuccess===''?"success":this.props.fullNameError?"error":"success"}>
                 <ControlLabel>Full Names *</ControlLabel>
                 <FormControl type="text" ref="fullNameRef" defaultValue={fullName}/>

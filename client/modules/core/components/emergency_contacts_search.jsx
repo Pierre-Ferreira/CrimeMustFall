@@ -10,7 +10,7 @@ class EmergencyContactsSearch extends React.Component{
   constructor(props) {
     super(props);
   }
-  searchStringFn (e) {
+  _searchStringFn (e) {
     e.preventDefault();
     let { contactSearchRef } = this.refs
     let searchStr = ReactDOM.findDOMNode(contactSearchRef).value
@@ -33,7 +33,7 @@ class EmergencyContactsSearch extends React.Component{
           <FormGroup controlId="formEmergencyContactsSearch">
             <ControlLabel></ControlLabel>
             <Col sm={8} smOffset={2}>
-              <FormControl className="contactSearchInput" ref="contactSearchRef" type="text" placeholder="Type in Name, Surname, Street, Suburb or City" onChange={this.searchStringFn.bind(this)}/>
+              <FormControl className="contactSearchInput" ref="contactSearchRef" type="text" placeholder="Type in Name, Surname, Street, Suburb or City" onChange={this._searchStringFn.bind(this)}/>
             </Col>
           </FormGroup>
         </Form>

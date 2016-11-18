@@ -6,11 +6,11 @@ class ChatMainPage extends React.Component {
   constructor(props) {
     super(props);
   }
-  CreateNewChat () {
+  _CreateNewChat () {
     let { createNewChat } = this.props
     createNewChat()
   }
-  GoToChat (chatId) {
+  _GoToChat (chatId) {
     let { goToChat } = this.props
     goToChat(chatId)
   }
@@ -22,14 +22,14 @@ class ChatMainPage extends React.Component {
                       };
     return (
       <div>
-        <Button bsStyle="danger" bsSize="large" block onClick={this.CreateNewChat.bind(this)}> NEW ALERT</Button>
+        <Button bsStyle="danger" bsSize="large" block onClick={this._CreateNewChat.bind(this)}> NEW ALERT</Button>
         <h4>My Alerts</h4>
         {myChatsInitiated.map((chat, index) => {
           let chatId = chat._id
           let createdAt = chat.createdAt
           let displayDateStr = displayDate(createdAt)
           let displayTimeStr = displayTime(createdAt)
-          return <Button style={btnStyles} bsStyle="warning" bsSize="large" block key={index} onClick={this.GoToChat.bind(this, chatId)}>
+          return <Button style={btnStyles} bsStyle="warning" bsSize="large" block key={index} onClick={this._GoToChat.bind(this, chatId)}>
               Date of Alert: {displayDateStr} ({displayTimeStr})
           </Button>
         })}
@@ -40,7 +40,7 @@ class ChatMainPage extends React.Component {
           let createdAt = chat.createdAt
           let displayDateStr = displayDate(createdAt)
           let displayTimeStr = displayTime(createdAt)
-          return <Button style={btnStyles} bsStyle="primary" bsSize="large" block key={index} onClick={this.GoToChat.bind(this, chatId)}>
+          return <Button style={btnStyles} bsStyle="primary" bsSize="large" block key={index} onClick={this._GoToChat.bind(this, chatId)}>
               Date of Alert: {displayDateStr} ({displayTimeStr})
           </Button>
         })}
