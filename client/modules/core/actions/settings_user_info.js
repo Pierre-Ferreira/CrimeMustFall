@@ -41,6 +41,8 @@ export default {
         if (err) {
           LocalState.set('SAVING_SUCCESS_FLAG', false)
           LocalState.set('SAVING_ERROR',err.message)
+        } else {
+          LocalState.set('SHOW_USER_SETTINGS_MODAL', false)
         }
       })
     },

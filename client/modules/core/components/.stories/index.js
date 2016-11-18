@@ -21,3 +21,4 @@ import chat_main_page from './chat_main_page';
 import chat_page from './chat_page';
 import chat_messages_display from './chat_messages_display';
 import chat_auto_message from './chat_auto_message';
+import modal_user_settings from './modal_user_settings';

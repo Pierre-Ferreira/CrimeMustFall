@@ -61,7 +61,7 @@ class ChatAutoMessage extends React.Component {
     return (
       <div>
           {autoButtonsArr.map((autoButton, index) => (
-            <Button  bsStyle={isInitiator ? "warning" : "primary"}
+            <Button  bsStyle={isInitiator ? "warning" : "info"}
                      className="alertAutoTextBtn"
                      key={index}
                      onClick={this._autoTextSend.bind(this,autoButton.messageText)}
