@@ -8,7 +8,13 @@ const AuthWrapper = (infoObj) => {
   console.log('infoObj:',infoObj, context())
   if (loggedIn) {
     LocalState.set('SHOW_USER_SETTINGS_MODAL',isNotAuthenticated)
-    // FlowRouter.go('/home')
+console.log("LocalState.get('NOT_JUST_LOGGED_IN'):",LocalState.get('NOT_JUST_LOGGED_IN'))
+    if (!LocalState.get('NOT_JUST_LOGGED_IN')) {
+        FlowRouter.go('/home')
+        LocalState.set('NOT_JUST_LOGGED_IN', true)
+    } else {
+        LocalState.set('NOT_JUST_LOGGED_IN', true)
+    }
     return (
       <div>{children}</div>
     );

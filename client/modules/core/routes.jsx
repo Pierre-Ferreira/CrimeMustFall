@@ -4,6 +4,7 @@ import {mount} from 'react-mounter';
 import MainLayout from './components/main_layout.jsx';
 import PublicPage from './components/public_page.jsx';
 import Homepage from './components/home_page.jsx';
+import NotFound404 from './components/not_found_404.jsx'
 // import Settings from './containers/settings'
 import SettingsUserInfo from './containers/settings_user_info'
 import EmergencyContactsSearch from './containers/emergency_contacts_search.js'
@@ -12,6 +13,7 @@ import ContactsRequestedByMeList from './containers/contacts_requested_by_me_lis
 import ContactsRequestsToMeList from './containers/contacts_requests_to_me_list.js'
 import ChatMainPage from './containers/chat_main_page.js'
 import ChatPage from './containers/chat_page.js'
+
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -88,4 +90,15 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
+  FlowRouter.notFound = {
+    // Subscriptions registered here don't have Fast Render support.
+    subscriptions: function() {
+
+    },
+    action: function() {
+      mount(MainLayoutCtx, {
+        content: () => (<NotFound404 />)
+      });
+    }
+};
 }

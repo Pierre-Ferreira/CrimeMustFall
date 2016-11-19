@@ -16,7 +16,7 @@ export const composer = ({context, clearErrors}, onData) => {
   propsObj.cityError = LocalState.get('SAVING_ERROR_CITY_REQUIRED')
   propsObj.contactNoError = LocalState.get('SAVING_ERROR_CONTACTNO_REQUIRED')
   propsObj.schemaError = LocalState.get('SAVING_ERROR')
-  if (Meteor.subscribe('user_profile', Meteor.userId()).ready()) {
+  if (Meteor.subscribe('user_profile').ready()) {
     let user_profile = Meteor.users.findOne(Meteor.userId())
     propsObj.user_profile = user_profile
     onData(null, propsObj);

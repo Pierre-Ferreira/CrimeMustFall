@@ -22,3 +22,4 @@ import chat_page from './chat_page';
 import chat_messages_display from './chat_messages_display';
 import chat_auto_message from './chat_auto_message';
 import modal_user_settings from './modal_user_settings';
+import Not_Found_404 from './not_found_404';
