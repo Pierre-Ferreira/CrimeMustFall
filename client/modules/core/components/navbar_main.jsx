@@ -24,8 +24,8 @@ const NavbarMain = () => (
         </NavDropdown>
         <NavDropdown eventKey={4} title="Settings" id="basic-nav-dropdown">
           <MenuItem eventKey={4.1} href="/my_settings">My settings</MenuItem>
-          <MenuItem divider />
-          <MenuItem eventKey={4.2}>My emergency settings</MenuItem>
+          {/* <MenuItem divider />
+          <MenuItem eventKey={4.2}>My emergency settings</MenuItem> */}
         </NavDropdown>
       </Nav>
       <Nav pullRight>

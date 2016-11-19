@@ -50,12 +50,12 @@ console.log('componentWillMount', this.props.saveSuccess)
   }
   render() {
     // Clone the CSS styles.
-    var styles = _.cloneDeep(this.constructor.styles);
+    let styles = _.cloneDeep(this.constructor.styles);
     const {fullName, surname, nickname, address, suburb, city, contactNo} = (this.props.user_profile.profile)?this.props.user_profile.profile:'';
-
+    let {showModal} = this.props
     return (
       <Grid>
-        <Col xs={12} sm={10} smOffset={1} md={6} mdOffset={3}>
+        <Col xs={12} sm={showModal?12:10} smOffset={showModal?0:1}>
           <Panel>
             <h1>My Info</h1>
             <div style={styles.schemaError}>{this.props.schemaError}</div>

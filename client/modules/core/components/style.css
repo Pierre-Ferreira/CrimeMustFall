@@ -11,6 +11,7 @@ body{
 }
 .modal-body {
   background-color: #8cb6c1;
+  border-radius: 5px;
 }
 .panel {
     margin-bottom: 10px !important;
