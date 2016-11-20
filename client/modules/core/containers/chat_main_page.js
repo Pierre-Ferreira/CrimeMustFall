@@ -13,11 +13,18 @@ export const composer = ({context}, onData) => {
     let userConnections = userProfile &&
                           userProfile.contacts &&
                           userProfile.contacts.connected
-console.log("userConnections:", userConnections)
     if (!userConnections || userConnections.length === 0)
       noContactsFlag = true
-    let myChatsInitiated = Collections.AlertConversations.find({"initiator_id": Meteor.userId()},{sort: {createdAt: -1}}).fetch()
-    let myChatsAlerted = Collections.AlertConversations.find({ "contacts_alerted_ids": { $in: [Meteor.userId()] } }, {sort: {createdAt: -1}}).fetch()
+    let myChatsInitiated = Collections.AlertConversations.find(
+                           {"initiator_id": Meteor.userId()},
+                           {sort: {createdAt: -1}})
+                           .fetch()
+    let myChatsAlerted = Collections.AlertConversations.find(
+                         { "contacts_alerted_ids": { $in: [Meteor.userId()] } },
+                         {sort: {createdAt: -1}})
+                         .fetch()
+
+console.log(myChatsAlerted)
     onData(null, {myChatsInitiated, myChatsAlerted, global_functions, noContactsFlag});
   }
 };

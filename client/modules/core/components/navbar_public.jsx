@@ -18,7 +18,7 @@ class NavbarPublic extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#"><AccountsUIWrapper /></NavItem>
+            {/* <NavItem eventKey={1} href="#"><AccountsUIWrapper /></NavItem> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

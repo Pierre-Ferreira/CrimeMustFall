@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { Button, Panel } from 'react-bootstrap'
+
+import MyChatsAlertedButton from '../containers/my_chats_alerted_button'
 
 class ChatMainPage extends React.Component {
   constructor(props) {
@@ -55,21 +56,7 @@ class ChatMainPage extends React.Component {
         })}
         <h4>Contacts Alerts</h4>
         {myChatsAlerted.map((chat, index) => {
-          let chatId = chat._id
-          let initiator_id = chat.initiator_id
-          let createdAt = chat.createdAt
-          let displayDateStr = displayDate(createdAt)
-          let displayTimeStr = displayTime(createdAt)
-          return (
-            <Button style={btnStyles}
-                    bsStyle="primary"
-                    bsSize="large"
-                    block
-                    key={index}
-                    onClick={this._GoToChat.bind(this, chatId)}
-            >
-              Date of Alert: {displayDateStr} ({displayTimeStr})
-            </Button>)
+          return <MyChatsAlertedButton key={index} chat={chat} />
         })}
       </div>
     );

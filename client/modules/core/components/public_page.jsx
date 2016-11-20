@@ -1,4 +1,5 @@
 import React from 'react';
+import AccountsUIWrapper from '../../../../imports/ui/AccountsUIWrapper.jsx'
 
 class PublicPage extends React.Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class PublicPage extends React.Component {
   render() {
     return (
       <div>
-        Please log in to use our system.
+        <div>Please log in to use our system. </div>
+        <div><AccountsUIWrapper /> </div>
       </div>
     );
   }
