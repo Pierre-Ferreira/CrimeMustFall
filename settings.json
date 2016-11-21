@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://Pierre:P7e7e7r7f7@ds159217.mlab.com:59217/crimemustfall"
+    }
+  }
+}

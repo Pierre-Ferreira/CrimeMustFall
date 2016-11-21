@@ -1,4 +1,5 @@
 import React from 'react';
+// import crimeMustFallImg from '../../../../public'
 
 class Homepage extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class Homepage extends React.Component {
     return (
       <div>
         <div>Homepage of Community CrimeFight!</div>
+        {/* <img src={homePageImg} /> */}
       </div>
 
     );

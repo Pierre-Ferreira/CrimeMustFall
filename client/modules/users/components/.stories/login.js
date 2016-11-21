@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { setComposerStub } from 'react-komposer';
-import NavbarMain from '../navbar_main.jsx';
+import Login from '../login.jsx';
 
-storiesOf('core.NavbarMain', module)
+storiesOf('users.Login', module)
   .add('default view', () => {
     return (
-      <NavbarMain />
+      <Login />
     );
   })

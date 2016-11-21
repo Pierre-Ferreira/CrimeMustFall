@@ -1,7 +1,6 @@
 import homepage from './home_page';
 import Settings from './settings';
 import settingsuserinfo from './settings_user_info';
-import navbarMain from './navbar_main';
 import public_page from './public_page';
 import public_page from './public_page';
 import navbar_public from './navbar_public';
@@ -25,3 +24,4 @@ import modal_user_settings from './modal_user_settings';
 import Not_Found_404 from './not_found_404';
 import my_chats_alerted_button from './my_chats_alerted_button';
 import my_chats_alerted_button from './my_chats_alerted_button';
+import navbar_main from './navbar_main';

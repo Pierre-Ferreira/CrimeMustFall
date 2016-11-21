@@ -13,17 +13,45 @@ import ContactsRequestedByMeList from './containers/contacts_requested_by_me_lis
 import ContactsRequestsToMeList from './containers/contacts_requests_to_me_list.js'
 import ChatMainPage from './containers/chat_main_page.js'
 import ChatPage from './containers/chat_page.js'
+import Login from '../users/containers/login.js'
+import Register from '../users/containers/new_user.js'
 
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
 
+
+  FlowRouter.route('/login', {
+    name: 'login_page',
+    action() {
+      // if (Meteor.userId())
+      //   FlowRouter.go('home')
+      // else {
+        mount(MainLayoutCtx, {
+          content: () => (<Login />)
+        });
+      // }
+    }
+  });
+  FlowRouter.route('/register', {
+    name: 'register_page',
+    action() {
+      // if (Meteor.userId())
+      //   FlowRouter.go('home')
+      // else {
+        mount(MainLayoutCtx, {
+          content: () => (<Register />)
+        });
+      // }
+    }
+  });
   FlowRouter.route('/', {
     name: 'public_page',
     action() {
-      mount(MainLayoutCtx, {
-        content: () => (<PublicPage />)
-      });
+      // if (Meteor.userId())
+      //   FlowRouter.go('home')
+      // else
+        FlowRouter.go('login_page')
     }
   });
   FlowRouter.route('/home', {

@@ -1,3 +1,14 @@
+@media (min-width: 768px) {
+  .container {
+      width: 100%;
+  }
+
+}
+@media (max-width: 992px) {
+  body {
+    width: 100%;
+  }
+}
 body{
     height:400px;
     position: relative;
@@ -328,10 +339,4 @@ img {
 .msgForm {
     padding: 1px;
     margin: 1px;
-}
-
-@media (min-width: 768px) {
-  .container {
-      width: 100%;
-  }
 }
