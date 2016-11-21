@@ -12,7 +12,6 @@ class PublicPage extends React.Component {
     return (
       <div>
         <div>Please log in to use our system. </div>
-        {/* <div><AccountsUIWrapper /> </div> */}
         <div><Login /> </div>
       </div>
     );

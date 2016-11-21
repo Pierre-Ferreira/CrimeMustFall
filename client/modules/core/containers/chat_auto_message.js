@@ -18,6 +18,8 @@ export const composer = (infoObj, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
+  chatMessageSend: actions.chat_message_send.chatMessageSend,
+  sendAlertSms: actions.send_alert_sms.sendAlertSms,
   context: () => context
 });
 

@@ -7,8 +7,11 @@ class ChatAutoMessage extends React.Component {
     super(props);
   }
   _autoTextSend(alertAutoMessage) {
-    let { chatMessageSend, chat_id } = this.props
+    let { chatMessageSend, sendAlertSms, chat_id, isInitiator } = this.props
     chatMessageSend(alertAutoMessage, chat_id)
+    if (isInitiator) {
+      sendAlertSms(alertAutoMessage)
+    }
   }
   render() {
     let alertButtonsArr = [

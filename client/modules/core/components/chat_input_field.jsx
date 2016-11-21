@@ -16,8 +16,11 @@ class ChatInputField extends React.Component {
     let { messageInputRef } = this.refs
     let messageInput = ReactDOM.findDOMNode(messageInputRef).value
     if (messageInput.trim().length === 0) return
-    let { chatMessageSend, chat_id } = this.props
+    let { chatMessageSend, sendAlertSms, chat_id, isInitiator } = this.props
     chatMessageSend(messageInput, chat_id)
+    if (isInitiator) {
+      sendAlertSms(messageInput)
+    }
     ReactDOM.findDOMNode(messageInputRef).value = ""
   }
   render() {
@@ -37,7 +40,8 @@ class ChatInputField extends React.Component {
                 </InputGroup>
               </FormGroup>
             </Form>
-            <ChatAutoMessage chat_id={this.props.chat_id} chatMessageSend={this.props.chatMessageSend}/>
+            {/* <ChatAutoMessage chat_id={this.props.chat_id} chatMessageSend={this.props.chatMessageSend}/> */}
+            <ChatAutoMessage chat_id={this.props.chat_id} />
           </Col>
         </Grid>
       </div>

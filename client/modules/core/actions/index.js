@@ -5,6 +5,7 @@ import contact_connect_request_confirm from './contact_connect_request_confirm';
 import chat_message_send from './chat_message_send';
 import chat_create_new from './chat_create_new';
 import go_to_chat from './go_to_chat';
+import send_alert_sms from './send_alert_sms';
 
 export default {
   settings_user_info,
@@ -13,5 +14,6 @@ export default {
   contact_connect_request_confirm,
   chat_message_send,
   chat_create_new,
-  go_to_chat
+  go_to_chat,
+  send_alert_sms
 };

@@ -4,6 +4,7 @@ import create_contact_connect_request  from './create_contact_connect_request';
 import confirm_contact_connect_request from './confirm_contact_connect_request';
 import chat_message_update from './chat_message_update';
 import chat_message_create from './chat_message_create';
+import sms_chat_alert from './sms_chat_alert';
 
 export default function () {
   user_settings();
@@ -12,4 +13,5 @@ export default function () {
   confirm_contact_connect_request();
   chat_message_update();
   chat_message_create();
+  sms_chat_alert();
 }
