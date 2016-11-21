@@ -27,6 +27,9 @@ body{
 .panel {
     margin-bottom: 10px !important;
 }
+.homePageHeader {
+  text-align: center;
+}
 .contactSearchInput {
     background: aliceblue;
 }

@@ -9,8 +9,10 @@ class Homepage extends React.Component {
   render() {
     return (
       <div>
-        <div>Homepage of Community CrimeFight!</div>
-        {/* <img src={homePageImg} /> */}
+        <h4 className="homePageHeader">Homepage of Community CrimeFight!</h4>
+        <img className="HomepageImg"
+             src="/CrimeMustFall.png"
+             alt="Homepage" />
       </div>
 
     );
